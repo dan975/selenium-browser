@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <property name="LOG_PATH" value="logs/testRunLogs.log"/>
+    <property name="APPEND_LOGS_FOR_NEW_TEST_RUN" value="false" />
+
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>${LOG_PATH}</file>
+        <append>${APPEND_LOGS_FOR_NEW_TEST_RUN}</append>
+        <encoder>
+            <pattern>%date %level [%thread] %logger{20} [%file:%method:%line] %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="info">
+        <appender-ref ref="FILE"/>
+    </root>
+
+<!--    project loggers-->
+    <logger name="demo.projects" level="debug" />
+    <logger name="demo.projects.cucumber.test.infrastructure.CucumberConfiguration" level="info" />
+
+<!--    dependency loggers-->
+    <logger name="org.springframework" level="off" />
+    <logger name="org.openqa.selenium" level="off" />
+</configuration>

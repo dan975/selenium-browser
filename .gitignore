@@ -1,0 +1,8 @@
+.idea
+SeleniumBrowser.iml
+logs
+target
+allure-report/
+allure-results/
+#javadoc added for demo, otherwise would not include in git history.
+#javadoc
